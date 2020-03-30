@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+      integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="header">
+        <div class="header-text" id="header-text">
+          <h1>NBA Quiz</h1>
+          <h3>
+            Answer These <span id="length-of-quiz"></span> questions to test
+            your NBA knowledge
+          </h3>
+        </div>
+        <button class="btn" id="start-btn">Start Quiz</button>
+      </div>
+      <div class="game-container">
+        <div class="quiz-container" id="quiz-container">
+          <div class="question-number" id="question-number"></div>
+          <div class="question" id="question"></div>
+          <div class="choices" id="choices">
+            <div>
+              <div class="answers">
+                <input class="answer" id="answer" type="radio" value="" />
+                <input class="answer" id="answer" type="radio" value="" />
+                <input class="answer" id="answer" type="radio" value="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="btn next-question" id="next-question">
+          Next Question
+        </button>
+
+        <button id="submit-btn" class="btn submit-btn">Submit Quiz</button>
+        <div id="results">
+          <h1 class="display-results" id="display-results"></h1>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="popup">
+      <h2>
+        Please Select an Answer.
+      </h2>
+      <div class="popup-div">
+        <!-- <button class="close-popup" id="close-popup">
+          Okay
+        </button> -->
+      </div>
+    </div>
+    <div class="spinner-gif" id="spinner-gif">
+      <div class="spinner-gif-container"></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
