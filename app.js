@@ -47,7 +47,8 @@ const myQuestions = [
     correctAnswer: '10 feet'
   },
   {
-    question: 'Which Year in the 200s did team USA not win gold in basketball?',
+    question:
+      'Which Year in the 2000s did team USA not win gold in basketball?',
     answers: {
       a: '2004',
       b: '2000',
