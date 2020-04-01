@@ -41,17 +41,33 @@
         <button class="btn next-question" id="next-question">
           Next Question
         </button>
-
+        <h3 class="enter-name-h3" id="enter-name-h3">
+          Enter Name to see results
+        </h3>
         <button id="submit-btn" class="btn submit-btn">Submit Quiz</button>
-        <div id="results">
+        <div id="results" class="results">
+          <form
+            action=""
+            name="submit-name"
+            id="submit-name"
+            class="submit-name"
+          >
+            <label for="name" id="name-label" class="name-label"> </label>
+            <input type="text" name="name" id="name" />
+            <input
+              type="submit"
+              class="submit-name-btn btn"
+              id="submit-name-btn"
+              value="Submit"
+            />
+          </form>
+          <button class="ok-btn" id="ok-btn">OK</button>
+
           <h1 class="display-results" id="display-results"></h1>
         </div>
       </div>
     </div>
     <div class="popup" id="popup">
-      <h2>
-        Please Select an Answer.
-      </h2>
       <div class="popup-div">
         <!-- <button class="close-popup" id="close-popup">
           Okay

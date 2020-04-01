@@ -2,7 +2,7 @@
 
 const myQuestions = [
   {
-    question: 'Which player has made 12 3-pointers in a game.',
+    question: 'Which player has made 12 3-pointers in a game?',
     answers: {
       a: 'Kevin Durant',
       b: 'Kobe Bryant',
@@ -11,7 +11,7 @@ const myQuestions = [
     correctAnswer: 'Kobe Bryant'
   },
   {
-    question: 'Which team won the finals is 2011',
+    question: 'Which team won the finals is 2011?',
     answers: {
       a: 'LA Lakers',
       b: 'Detroit Pistons',
@@ -20,7 +20,7 @@ const myQuestions = [
     correctAnswer: 'Dallas Mavericks'
   },
   {
-    question: 'How tall is Yao Ming',
+    question: 'How tall is Yao Ming?',
     answers: {
       a: '7 fet 3 inches',
       b: '7 feet',
@@ -29,7 +29,7 @@ const myQuestions = [
     correctAnswer: '7 feet 6 inches'
   },
   {
-    question: 'What Country is Tony Parker From',
+    question: 'What Country is Tony Parker From?',
     answers: {
       a: 'France',
       b: 'US',
@@ -38,7 +38,7 @@ const myQuestions = [
     correctAnswer: 'France'
   },
   {
-    question: 'How Tall is a Basketball hoop',
+    question: 'How Tall is a Basketball hoop?',
     answers: {
       a: '20 feet',
       b: '11 feet',
@@ -57,7 +57,7 @@ const myQuestions = [
     correctAnswer: '2004'
   },
   {
-    question: 'Which team originally drafted Kobe Bryant',
+    question: 'Which team originally drafted Kobe Bryant?',
     answers: {
       a: 'Houston',
       b: 'Cleveland',
@@ -66,7 +66,7 @@ const myQuestions = [
     correctAnswer: 'Charlotte'
   },
   {
-    question: 'What College did Chris Paul go to',
+    question: 'What College did Chris Paul go to?',
     answers: {
       a: 'North Carolina',
       b: 'Wake Forrest',
@@ -85,7 +85,7 @@ const myQuestions = [
     correctAnswer: 'Klay Thompson'
   },
   {
-    question: 'Which of these coaches did not coach the Blazers',
+    question: 'Which of these coaches did not coach the Blazers?',
     answers: {
       a: 'Rick Adelman',
       b: 'Mo Cheeks',
@@ -110,6 +110,12 @@ const popup = document.getElementById('popup');
 const closePopup = document.getElementById('close-popup');
 const spinner = document.getElementById('spinner-gif');
 const lenthOfQuiz = document.getElementById('length-of-quiz');
+const nameInput = document.getElementById('name');
+const submitScoreBtn = document.getElementById('submit-name-btn');
+const nameForm = document.getElementById('submit-name');
+const okBtn = document.getElementById('ok-btn');
+const nameLabel = document.getElementById('name-label');
+const enterNameH3 = document.getElementById('enter-name-h3');
 
 // global variables
 
@@ -248,26 +254,22 @@ function displayNextQuestion() {
     }
   } else {
     currentQuestion -= 1;
-    showMessage();
+    showMessage('Please select an answer');
   }
 
   allSubmittedAnswers.push(sumbitedAnswer);
-
-  console.log(correctAnswers[currentQuestion - 1]);
-  console.log(`${answeredCorrect}/${myQuestions.length}`);
-  console.log(sumbitedAnswer);
-  console.log(answersSelected);
-  console.log(allSubmittedAnswers);
 }
 
 // show message if no answers are selected
 
-function showMessage() {
+function showMessage(msg) {
+  popup.innerHTML = `<h2>${msg}</h2>`;
+
   popup.classList.add('show-popup');
   setTimeout(() => {
     popup.classList.remove('show-popup');
     popup.classList.add('hide-popup');
-  }, 5000);
+  }, 2000);
   popup.classList.remove('hide-popup');
 }
 
@@ -331,7 +333,7 @@ function finishQuiz() {
   );
   if (finalCheck > 0) {
     correctAnswers.push(myQuestions[currentQuestion].correctAnswer);
-    finishBtn.addEventListener('click', showResults);
+    finishBtn.addEventListener('click', submitName);
   }
 }
 
@@ -340,7 +342,6 @@ function finishQuiz() {
 function selectAnswer(e) {
   answersSelected.push(e.target.value);
   e.target.classList.add('selected');
-  console.log(finalCheck);
 
   // myQuestions.filter((question, index) =>
   //   index === currentQuestion && e.target.value === question.correctAnswer
@@ -349,26 +350,58 @@ function selectAnswer(e) {
   // );
 }
 
-function showResults() {
-  spinner.style.display = 'block';
+function submitName() {
+  nameInput.classList.add('pushup');
+  enterNameH3.classList.add('pushup');
+  okBtn.classList.add('pushup');
+
+  enterNameH3.style.display = 'block';
+  nameLabel.style.display = 'inline';
+  nameForm.style.display = 'flex';
+  okBtn.style.display = 'inline';
+  nameInput.style.display = 'block';
+  // submitScoreBtn.style.display = 'inline';
   quizContainer.style.display = 'none';
   nextQuestionBtn.style.display = 'none';
 
+  okBtn.addEventListener('click', showResults);
+}
+
+function showResults() {
+  enterNameH3.style.display = 'none';
+
+  nameLabel.style.display = 'none';
+  spinner.style.display = 'block';
+  nameInput.style.display = 'none';
+  nextQuestionBtn.style.display = 'none';
+  okBtn.style.display = 'none';
+
   setTimeout(() => {
+    submitScoreBtn.style.display = 'block';
     spinner.style.display = 'none';
     displayResults.innerText = `You Scored ${Math.floor(
       (answeredCorrect / myQuestions.length) * 100
     )}%`;
-    setTimeout(() => {
-      location.reload();
-    }, 5000);
+    // setTimeout(() => {
+    //   location.reload();
+    // }, 5000);
   }, 1000);
+}
+
+function submitQuiz(e) {
+  e.preventDefault();
+  showMessage('Quiz Submited!');
+  setTimeout(() => {
+    nameForm.submit();
+  }, 2500);
 }
 
 startBtn.addEventListener('click', startGame);
 
 nextQuestionBtn.addEventListener('click', displayNextQuestion);
 quizContainer.addEventListener('change', selectAnswer);
+submitScoreBtn.addEventListener('click', submitQuiz);
+
 // closePopup.addEventListener('click', () => {
 //   popup.style.display = 'none';
 // });

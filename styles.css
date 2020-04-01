@@ -52,7 +52,7 @@ body {
 .btn {
   position: relative;
   top: 0;
-  left: 50%;
+  left: 48%;
   transform: translateX(-50%);
   font-size: 20px;
   padding: 20px 35px;
@@ -94,6 +94,26 @@ body {
   display: none;
 }
 
+.submit-name-btn {
+  padding: 20px 35px;
+  border-radius: 8px;
+  margin-top: 100px;
+  margin-right: 40%;
+  background: rgba(240, 70, 58, 0.8);
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  outline: none;
+  display: none;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .display-results {
   display: flex;
   flex-direction: column;
@@ -112,7 +132,7 @@ label {
   line-height: 32px;
 }
 
-input {
+.quiz-container input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -129,6 +149,79 @@ input {
   top: 4px;
 
   cursor: pointer;
+}
+
+.submit-name {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
+  margin-left: 15px;
+  border-radius: 0%;
+  cursor: auto;
+  position: absolute;
+  top: 0;
+  left: 34%;
+  transform: translateX(-50%);
+}
+
+.ok-btn.pushup,
+.enter-name-h3.pushup,
+input[type='text'].pushup {
+  animation: pushup 0.5s forwards ease;
+}
+
+.enter-name-h3 {
+  font-size: 35px;
+  display: none;
+  position: absolute;
+  left: 34%;
+  top: -65px;
+}
+
+.ok-btn {
+  display: none;
+  position: absolute;
+  font-size: 30px;
+  bottom: -150px;
+  left: 36.5%;
+  /* transform: translateX(-50%); */
+  width: 30%;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  color: #ffffff;
+  background: rgba(228, 101, 101, 0.9);
+}
+
+input[type='text'] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  display: none;
+  margin-left: 50%;
+  font-size: 40px;
+  padding: 10px 20px;
+  background: rgba(109, 130, 228, 0.8);
+  color: #ffffff;
+}
+
+.name-label {
+  position: absolute;
+  left: 12%;
+  transform: translateX(0);
+  top: -60px;
+  display: none;
+  font-size: 40px;
+}
+
+input[type='text']:hover {
+  transition: 0.1s all ease;
+  background: rgba(61, 72, 117, 0.8);
 }
 
 input:checked {
@@ -162,7 +255,7 @@ button:active {
 .popup {
   position: absolute;
   top: 10%;
-  left: 35%;
+  left: 32%;
   transform: translateX(-50%);
   width: 35%;
   height: 150px;
@@ -296,5 +389,97 @@ button:active {
   }
   to {
     transform: scale(0);
+  }
+}
+
+@keyframes pushup {
+  from {
+    transform: translateY(800px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: hidden;
+  }
+
+  .btn {
+    left: 45%;
+  }
+
+  .popup {
+    display: none;
+    width: 90%;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    transform: translateX(-50%);
+    height: 150px;
+    position: absolute;
+    transform: translateX(-50%);
+    height: 150px;
+    background: rgba(29, 30, 36, 0.9);
+    color: white;
+    z-index: 2;
+    font-size: 24px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    transform: scale(0);
+    display: block;
+  }
+  .popup.hide-popup {
+    animation: hide-popup 0.5s forwards ease;
+  }
+  .popup.show-popup {
+    animation: show-popup 0.5s forwards ease;
+  }
+
+  .close-popup {
+    position: absolute;
+    bottom: -25px;
+    right: -5px;
+    font-size: 18px;
+    cursor: pointer;
+    background: rgba(228, 101, 101, 0.9);
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+  }
+
+  .enter-name-h3 {
+    position: absolute;
+    left: 70px;
+
+    width: 70%;
+    margin-bottom: 150px;
+    font-size: 20px;
+  }
+
+  input[type='text'] {
+    width: 100%;
+    height: 50px;
+    margin-left: 100px;
+  }
+
+  .spinner-gif-container {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+  }
+
+  .submit-name-btn {
+    margin-left: 100px;
+  }
+
+  .display-results {
+    font-size: 35px;
   }
 }
