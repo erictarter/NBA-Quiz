@@ -403,9 +403,15 @@ nameForm.addEventListener('keydown', e => {
   console.log(e.target);
 });
 
+function addName() {
+  const score = Math.floor((answeredCorrect / myQuestions.length) * 100);
+  nameInput.value += ` - ${score}`;
+}
+
 nextQuestionBtn.addEventListener('click', displayNextQuestion);
 quizContainer.addEventListener('change', selectAnswer);
 submitScoreBtn.addEventListener('click', submitQuiz);
+nameForm.addEventListener('submit', addName);
 okBtn.addEventListener('click', () => {
   const score = Math.floor((answeredCorrect / myQuestions.length) * 100);
   console.log(score);
