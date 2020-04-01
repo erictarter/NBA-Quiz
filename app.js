@@ -408,7 +408,7 @@ function addName() {
   nameInput.value += ` - ${score}%`;
 }
 
-function submitScoreOnEnter() {
+function addScoreValue() {
   const score = Math.floor((answeredCorrect / myQuestions.length) * 100);
   nameInput.value += ` - ${score}%`;
 }
@@ -417,7 +417,7 @@ nextQuestionBtn.addEventListener('click', displayNextQuestion);
 quizContainer.addEventListener('change', selectAnswer);
 submitScoreBtn.addEventListener('click', submitQuiz);
 nameForm.addEventListener('submit', addName);
-okBtn.addEventListener('click', submitScoreOnEnter);
+okBtn.addEventListener('click', addScoreValue);
 
 // closePopup.addEventListener('click', () => {
 //   popup.style.display = 'none';
