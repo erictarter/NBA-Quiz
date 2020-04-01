@@ -27,71 +27,71 @@ const myQuestions = [
       c: '7 feet 6 inches'
     },
     correctAnswer: '7 feet 6 inches'
-  },
-  {
-    question: 'What Country is Tony Parker From?',
-    answers: {
-      a: 'France',
-      b: 'US',
-      c: 'Germany'
-    },
-    correctAnswer: 'France'
-  },
-  {
-    question: 'How Tall is a Basketball hoop?',
-    answers: {
-      a: '20 feet',
-      b: '11 feet',
-      c: '10 feet'
-    },
-    correctAnswer: '10 feet'
-  },
-  {
-    question:
-      'Which Year in the 2000s did team USA not win gold in basketball?',
-    answers: {
-      a: '2004',
-      b: '2000',
-      c: '2008'
-    },
-    correctAnswer: '2004'
-  },
-  {
-    question: 'Which team originally drafted Kobe Bryant?',
-    answers: {
-      a: 'Houston',
-      b: 'Cleveland',
-      c: 'Charlotte'
-    },
-    correctAnswer: 'Charlotte'
-  },
-  {
-    question: 'What College did Chris Paul go to?',
-    answers: {
-      a: 'North Carolina',
-      b: 'Wake Forrest',
-      c: 'Seton Hall'
-    },
-    correctAnswer: 'Wake Forrest'
-  },
-  {
-    question:
-      'Who is the Play that holds the record for most points(37) in a quarter?',
-    answers: {
-      a: 'Michael Jordan',
-      b: 'Klay Thompson',
-      c: 'Lonzo Ball'
-    },
-    correctAnswer: 'Klay Thompson'
-  },
-  {
-    question: 'Which of these coaches did not coach the Blazers?',
-    answers: {
-      a: 'Rick Adelman',
-      b: 'Mo Cheeks',
-      c: 'Luke Walton'
-    },
-    correctAnswer: 'Luke Walton'
+    // },
+    // {
+    //   question: 'What Country is Tony Parker From?',
+    //   answers: {
+    //     a: 'France',
+    //     b: 'US',
+    //     c: 'Germany'
+    //   },
+    //   correctAnswer: 'France'
+    // },
+    // {
+    //   question: 'How Tall is a Basketball hoop?',
+    //   answers: {
+    //     a: '20 feet',
+    //     b: '11 feet',
+    //     c: '10 feet'
+    //   },
+    //   correctAnswer: '10 feet'
+    // },
+    // {
+    //   question:
+    //     'Which Year in the 2000s did team USA not win gold in basketball?',
+    //   answers: {
+    //     a: '2004',
+    //     b: '2000',
+    //     c: '2008'
+    //   },
+    //   correctAnswer: '2004'
+    // },
+    // {
+    //   question: 'Which team originally drafted Kobe Bryant?',
+    //   answers: {
+    //     a: 'Houston',
+    //     b: 'Cleveland',
+    //     c: 'Charlotte'
+    //   },
+    //   correctAnswer: 'Charlotte'
+    // },
+    // {
+    //   question: 'What College did Chris Paul go to?',
+    //   answers: {
+    //     a: 'North Carolina',
+    //     b: 'Wake Forrest',
+    //     c: 'Seton Hall'
+    //   },
+    //   correctAnswer: 'Wake Forrest'
+    // },
+    // {
+    //   question:
+    //     'Who is the Play that holds the record for most points(37) in a quarter?',
+    //   answers: {
+    //     a: 'Michael Jordan',
+    //     b: 'Klay Thompson',
+    //     c: 'Lonzo Ball'
+    //   },
+    //   correctAnswer: 'Klay Thompson'
+    // },
+    // {
+    //   question: 'Which of these coaches did not coach the Blazers?',
+    //   answers: {
+    //     a: 'Rick Adelman',
+    //     b: 'Mo Cheeks',
+    //     c: 'Luke Walton'
+    //   },
+    //   correctAnswer: 'Luke Walton'
   }
 ];
 
@@ -391,6 +391,7 @@ function showResults() {
 function submitQuiz(e) {
   e.preventDefault();
   showMessage('Quiz Submited!');
+  console.log(nameInput.innerText);
   setTimeout(() => {
     nameForm.submit();
   }, 2500);
@@ -398,9 +399,19 @@ function submitQuiz(e) {
 
 startBtn.addEventListener('click', startGame);
 
+nameForm.addEventListener('keydown', e => {
+  console.log(e.target);
+});
+
 nextQuestionBtn.addEventListener('click', displayNextQuestion);
 quizContainer.addEventListener('change', selectAnswer);
 submitScoreBtn.addEventListener('click', submitQuiz);
+okBtn.addEventListener('click', () => {
+  const score = Math.floor((answeredCorrect / myQuestions.length) * 100);
+  console.log(score);
+  nameInput.value += ` - ${score}%`;
+  console.log(nameInput.value);
+});
 
 // closePopup.addEventListener('click', () => {
 //   popup.style.display = 'none';
