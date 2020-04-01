@@ -390,8 +390,14 @@ function showResults() {
 
 function submitQuiz(e) {
   e.preventDefault();
-  showMessage('Quiz Submited!');
+  const score = Math.floor((answeredCorrect / myQuestions.length) * 100);
+  nameForm.style.display = 'none';
+  okBtn.style.display = 'none';
+  enterNameH3.style.display = 'none';
+  showMessage(`Quiz Submited! final score: ${score}%`);
   console.log(nameInput.innerText);
+  nameInput.value += ` - ${score}%`;
+
   setTimeout(() => {
     nameForm.submit();
   }, 2500);
