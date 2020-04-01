@@ -163,40 +163,38 @@ const displayQuestion = () => {
     <div class="question" id="question">${question.question}</div>
     <div class="choices" id="choices">
     <div>
-      <input
-      name='answer'
-      class="answer"
-      id="answer"
-      type="radio"
-      value="${question.answers.a}"
-    />
-    <label for='answer'>
-    a: ${question.answers.a}
-    </label>
-    </div>
-    <div class='each-answer'>
     <input
-      name='answer'
-      class="answer"
-      id="answer"
-      type="radio"
-      value="${question.answers.b}"
-    />  <label for='answer'>
-    a: ${question.answers.b}
-    </label>
-          </div>
-          <div class='each-answer'>
-    <input
-      name='answer'
-      class="answer"
-      id="answer"
-      type="radio"
-      value="${question.answers.c}"
-    />
-    <label for='answer'>
-    a: ${question.answers.c}
-    </label>
-    </div>
+    name='answer'
+    class="answer"
+    id="answer"
+    type="radio"
+    value="${question.answers.a}"
+  />
+  <label for='${question.answers.a}'>
+  a: ${question.answers.a}
+  </label>
+  </div>
+  <div class='each-answer'>
+  <input
+    name='answer'
+    class="answer"
+    id="answer"
+    type="radio"
+    value="${question.answers.b}"
+  />
+  
+        b: ${question.answers.b} 
+        </div>
+        <div class='each-answer'>
+  <input
+    name='answer'
+    class="answer"
+    id="answer"
+    type="radio"
+    value="${question.answers.c}"
+  />
+  c: ${question.answers.c} 
+  </div>
 
 <button class="btn next-question" id="next-question">Next Question</button>
 
@@ -279,6 +277,8 @@ function finishQuiz() {
   nextQuestionBtn.innerHTML = 'Finish';
   nextQuestionBtn.id = 'finish';
   const finishBtn = document.getElementById('finish');
+
+  // num > 0 ? (finishBtn.disabled = 'false') : null;
 
   selectedAnswerLast = answersSelected.map(answer => answer);
   sumbitedAnswer =
@@ -405,19 +405,19 @@ nameForm.addEventListener('keydown', e => {
 
 function addName() {
   const score = Math.floor((answeredCorrect / myQuestions.length) * 100);
-  nameInput.value += ` - ${score}`;
+  nameInput.value += ` - ${score}%`;
+}
+
+function submitScoreOnEnter() {
+  const score = Math.floor((answeredCorrect / myQuestions.length) * 100);
+  nameInput.value += ` - ${score}%`;
 }
 
 nextQuestionBtn.addEventListener('click', displayNextQuestion);
 quizContainer.addEventListener('change', selectAnswer);
 submitScoreBtn.addEventListener('click', submitQuiz);
 nameForm.addEventListener('submit', addName);
-okBtn.addEventListener('click', () => {
-  const score = Math.floor((answeredCorrect / myQuestions.length) * 100);
-  console.log(score);
-  nameInput.value += ` - ${score}%`;
-  console.log(nameInput.value);
-});
+okBtn.addEventListener('click', submitScoreOnEnter);
 
 // closePopup.addEventListener('click', () => {
 //   popup.style.display = 'none';
