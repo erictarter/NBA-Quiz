@@ -489,7 +489,7 @@ function submitQuiz(e) {
   nameForm.style.display = 'none';
   okBtn.style.display = 'none';
   enterNameH3.style.display = 'none';
-  showMessage(`Quiz Submited! final score: ${score}%`);
+  showMessage(`Results Submitted! final score: ${score}%`);
   console.log(nameInput.innerText);
   nameInput.value += ` - ${score}%`;
 
