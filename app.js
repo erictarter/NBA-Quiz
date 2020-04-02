@@ -14,7 +14,7 @@ const myQuestions = [
     question: 'Which team won the finals is 2011?',
     answers: {
       a: 'LA Lakers',
-      b: 'Detroit Pistons',
+      b: 'Miami Heat',
       c: 'Dallas Mavericks'
     },
     correctAnswer: 'Dallas Mavericks'
@@ -22,7 +22,7 @@ const myQuestions = [
   {
     question: 'How tall is Yao Ming?',
     answers: {
-      a: '7 fet 3 inches',
+      a: '7 feet 5 inches',
       b: '7 feet',
       c: '7 feet 6 inches'
     },
@@ -38,17 +38,18 @@ const myQuestions = [
     correctAnswer: 'France'
   },
   {
-    question: 'How Tall is a Basketball hoop?',
+    question: 'Which Player has the highest career FT% ?',
     answers: {
-      a: '20 feet',
-      b: '11 feet',
-      c: '10 feet'
+      a: 'Peja Skojakovi`c',
+      b: 'Steve Nash',
+      c: 'Steph Curry'
     },
-    correctAnswer: '10 feet'
+    correctAnswer: 'Steph Curry'
   },
+
   {
     question:
-      'Which Year in the 2000s did team USA not win gold in basketball?',
+      'Which Year in the 2000s did team USA did NOT win gold in basketball?',
     answers: {
       a: '2004',
       b: '2000',
@@ -57,16 +58,7 @@ const myQuestions = [
     correctAnswer: '2004'
   },
   {
-    question: 'Which team originally drafted Kobe Bryant?',
-    answers: {
-      a: 'Houston',
-      b: 'Cleveland',
-      c: 'Charlotte'
-    },
-    correctAnswer: 'Charlotte'
-  },
-  {
-    question: 'What College did Chris Paul go to?',
+    question: 'What college did Chris Paul go to?',
     answers: {
       a: 'North Carolina',
       b: 'Wake Forrest',
@@ -76,7 +68,7 @@ const myQuestions = [
   },
   {
     question:
-      'Who is the Play that holds the record for most points(37) in a quarter?',
+      'Who is the player that holds the record for most points(37) in a quarter?',
     answers: {
       a: 'Michael Jordan',
       b: 'Klay Thompson',
@@ -89,9 +81,112 @@ const myQuestions = [
     answers: {
       a: 'Rick Adelman',
       b: 'Mo Cheeks',
-      c: 'Luke Walton'
+      c: 'Lionel Holllins'
     },
-    correctAnswer: 'Luke Walton'
+    correctAnswer: 'Lionel Holllins'
+  },
+
+  {
+    question:
+      'One of these current/former players has the highest career 3pt FG% ever..',
+    answers: {
+      a: 'Steve Kerr',
+      b: 'Jason Kapono',
+      c: 'Seth Curry'
+    },
+    correctAnswer: 'Steve Kerr'
+  },
+  {
+    question: 'Which player has not won the ROTY award?',
+    answers: {
+      a: 'Steve Francis',
+      b: 'Yao Ming',
+      c: 'Brandon Roy'
+    },
+    correctAnswer: 'Yao Ming'
+  },
+
+  {
+    question: 'Which player has the highest career PPG average?',
+    answers: {
+      a: 'Wilt Chaimberlain',
+      b: 'Michael Jordan',
+      c: 'Allen Iverson'
+    },
+    correctAnswer: 'Michael Jordan'
+  },
+  {
+    question: 'Which Team has the Biggest 4th Q comback in a game?',
+    answers: {
+      a: 'Boston Celtics',
+      b: 'Milwaukee',
+      c: 'Indiana Pacers'
+    },
+    correctAnswer: 'Milwaukee'
+  },
+  {
+    question: 'Which player holds the all time high for assists in a game?',
+    answers: {
+      a: 'Terry Porter',
+      b: 'Scott Skiles',
+      c: 'Steve Nash'
+    },
+    correctAnswer: 'Scott Skiles'
+  },
+  {
+    question: 'Which player has the most rings?',
+    answers: {
+      a: 'Lamar Odom',
+      b: 'Jason Kidd',
+      c: 'Jerry Stackhouse'
+    },
+    correctAnswer: 'Lamar Odom'
+  },
+  {
+    question: 'Which current/former player has the most Instagram followers?',
+    answers: {
+      a: 'Steph Curry',
+      b: 'Kyrie Irving',
+      c: 'Shaq'
+    },
+    correctAnswer: 'Steph Curry'
+  },
+  {
+    question: 'Who is the Heaviest NBA player of all time',
+    answers: {
+      a: 'Oliver Miller',
+      b: 'Eddy Curry',
+      c: 'Tacko Fall'
+    },
+    correctAnswer: 'Oliver Miller'
+  },
+  {
+    question: 'Which college did Danny Green play for?',
+    answers: {
+      a: 'North Carolina',
+      b: 'Duke',
+      c: 'Kentucky'
+    },
+    correctAnswer: 'North Carolina'
+  },
+  {
+    question:
+      'What year did the NBA Swicth to 7 game series throughout the playoffs?',
+    answers: {
+      a: '2003',
+      b: '2002',
+      c: '2005'
+    },
+    correctAnswer: '2003'
+  },
+  {
+    question: "What is Michael Jordan's career high points in a game?",
+    answers: {
+      a: '67',
+      b: '69',
+      c: '71'
+    },
+    correctAnswer: '69'
   }
 ];
 
