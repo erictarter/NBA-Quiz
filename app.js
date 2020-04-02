@@ -171,7 +171,7 @@ const myQuestions = [
   },
   {
     question:
-      'What year did the NBA Swicth to 7 game series throughout the playoffs?',
+      'What year did the NBA Switch to 7 game series throughout the playoffs?',
     answers: {
       a: '2003',
       b: '2002',
